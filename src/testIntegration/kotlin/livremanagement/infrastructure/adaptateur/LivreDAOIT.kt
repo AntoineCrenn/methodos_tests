@@ -28,7 +28,7 @@ import java.sql.ResultSet
 class LivreDAOIT {
 
     @Autowired
-    private lateinit var livreDAO: LivreDA0
+    private lateinit var livreDAO: LivreDAO
 
     @BeforeEach
     fun beforeEach() {

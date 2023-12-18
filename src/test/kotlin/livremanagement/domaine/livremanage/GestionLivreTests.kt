@@ -63,7 +63,6 @@ class GestionLivreTests {
     fun `livre deja reserver`() {
         every { port.LivreparTitre("La mort en face") } answers { Livre("La mort en face", "Romain Grosjean", true) }
         val livre = Livre("La mort en face", "Romain Grosjean")
-        println(livre)
         assertFailure{ gestionlivre.reserverLivre(livre.titre) }
             .isInstanceOf(Exception::class.java)
             .hasMessage("Le livre avec le titre ${livre.titre} est déjà reservé.")
