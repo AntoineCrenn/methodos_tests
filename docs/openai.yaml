@@ -1,0 +1,44 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /livres:
+    get:
+      tags:
+        - livre-controlleur
+      operationId: liste_livre
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LivreDTO'
+    post:
+      tags:
+        - livre-controlleur
+      operationId: creer_livre
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LivreDTO'
+        required: true
+      responses:
+        "201":
+          description: Created
+components:
+  schemas:
+    LivreDTO:
+      type: object
+      properties:
+        titre:
+          type: string
+        auteur:
+          type: string
