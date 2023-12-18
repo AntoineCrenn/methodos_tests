@@ -26,14 +26,6 @@ class GestionLivreTests {
     private lateinit var port: LivrePort
 
     @Test
-    fun `test creation livre`() {
-        justRun {port.creer_livre(any()) }
-        val livre = Livre("Charles Leclerc, le prodige", "Charles Leclerc")
-        gestionlivre.creer_livre(livre)
-        verify {port.creer_livre(livre)}
-    }
-
-    @Test
     fun `test recuperation livres trier par titre`() {
         every{port.liste_livre()} returns listOf(
             Livre("Gasly, le magnifique", "Pierre Gasly"),
@@ -51,6 +43,14 @@ class GestionLivreTests {
     }
 
     @Test
+    fun `test creation livre`() {
+        justRun {port.creer_livre(any()) }
+        val livre = Livre("Charles Leclerc, le prodige", "Charles Leclerc")
+        gestionlivre.creer_livre(livre)
+        verify {port.creer_livre(livre)}
+    }
+
+    @Test
     fun `reserver livre`() {
         every { port.LivreparTitre("La mort en face") } answers { Livre("La mort en face", "Romain Grosjean", false) }
         every { port.reserverLivre("La mort en face") } answers { nothing }
@@ -62,11 +62,11 @@ class GestionLivreTests {
     @Test
     fun `livre deja reserver`() {
         every { port.LivreparTitre("La mort en face") } answers { Livre("La mort en face", "Romain Grosjean", true) }
-        val livre = Livre("La mort en face", "Romain Grosjean", true)
+        val livre = Livre("La mort en face", "Romain Grosjean")
         println(livre)
         assertFailure{ gestionlivre.reserverLivre(livre.titre) }
             .isInstanceOf(Exception::class.java)
-            .hasMessage("Le Livre qui a comme titre ${livre.titre} est déjà reservé.")
+            .hasMessage("Le livre avec le titre ${livre.titre} est déjà reservé.")
     }
 
     @Test
