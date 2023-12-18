@@ -15,7 +15,7 @@ plugins {
 	id("info.solidsoft.pitest") version "1.15.0"
 }
 
-group = "com.jicay"
+group = "livremanagement"
 version = "0.0.1-SNAPSHOT"
 
 java {
