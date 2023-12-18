@@ -4,19 +4,16 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	java
-	id("org.springframework.boot") version "3.1.6"
-	id("io.spring.dependency-management") version "1.1.4"
+	id("org.springframework.boot") version "3.1.3"
+	id("io.spring.dependency-management") version "1.1.3"
 	id("jacoco")
 	id("io.gitlab.arturbosch.detekt") version("1.23.1")
-	kotlin("jvm") version "1.8.22"
+	kotlin("jvm") version "1.9.0"
 	kotlin("plugin.spring") version "1.8.22"
 	id("org.springdoc.openapi-gradle-plugin") version "1.7.0"
 	id("com.x3t.gradle.plugins.openapi.openapi_diff") version "1.0"
 	id("info.solidsoft.pitest") version "1.15.0"
 }
-
-group = "livremanagement"
-version = "0.0.1-SNAPSHOT"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
@@ -65,6 +62,7 @@ val testComponentImplementation: Configuration by configurations.getting {
 	extendsFrom(configurations.implementation.get())
 }
 
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -74,9 +72,8 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
 
 	testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
-	testImplementation("io.mockk:mockk:1.12.0")
+	testImplementation("io.mockk:mockk:1.13.8")
 	testImplementation("com.willowtreeapps.assertk:assertk:0.27.0")
-	testImplementation("net.jqwik:jqwik-kotlin:1.8.1")
 	testImplementation("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.15.0")
 
 	testIntegrationImplementation("io.mockk:mockk:1.13.8")
@@ -85,7 +82,6 @@ dependencies {
 	testIntegrationImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(module = "mockito-core")
 	}
-
 	testIntegrationImplementation("org.testcontainers:postgresql:1.19.1")
 	testIntegrationImplementation("org.testcontainers:junit-jupiter:1.19.1")
 	testIntegrationImplementation("org.testcontainers:jdbc-test:1.12.0")
@@ -172,7 +168,7 @@ tasks.withType<Detekt>().configureEach {
 }
 
 pitest {
-	targetClasses.add("livremanagement.*")
+	targetClasses.add("com.jicay.bookmanagement.*")
 	junit5PluginVersion = "1.0.0"
 	avoidCallsTo.set(setOf("kotlin.jvm.internal"))
 	mutators.set(setOf("STRONGER"))
@@ -180,7 +176,7 @@ pitest {
 	testSourceSets.addAll(sourceSets["test"], sourceSets["testIntegration"])
 	mainSourceSets.addAll(sourceSets["main"])
 	outputFormats.addAll("XML", "HTML")
-	excludedClasses.add("**com.example.demo")
+	excludedClasses.add("**BookManagementApplication")
 }
 
 openApi {
