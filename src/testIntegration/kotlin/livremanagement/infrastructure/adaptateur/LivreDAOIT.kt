@@ -21,7 +21,6 @@ import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
 import java.sql.ResultSet
-import kotlin.livremanagement.infrastructure.adaptateur.LivreDAO
 
 @SpringBootTest
 @Testcontainers
