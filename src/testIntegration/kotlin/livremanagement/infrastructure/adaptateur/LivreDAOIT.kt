@@ -52,8 +52,8 @@ class LivreDAOIT {
             """.trimIndent())
         val resultat = livreDAO.liste_livre()
         assertThat(resultat).containsExactlyInAnyOrder(
-            Livre("Gasly, le magnifique", "Pierre Gasly", false),
             Livre("Charles Leclerc, le prodige", "Charles Leclerc", false),
+            Livre("Gasly, le magnifique", "Pierre Gasly", false),
             Livre("La mort en face", "Romain Grosjean", false),
             Livre("Ma vie sans gravité", "Thomas Pesquet", false)
         )
@@ -69,8 +69,8 @@ class LivreDAOIT {
         assertThat(resultat.size).isEqualTo(1)
         assertThat(resultat[0]["id"]).isNotNull()
         assertThat(resultat[0]["id"] is Int).isTrue()
-        assertThat(resultat[0]["titre"]).isEqualTo("Gasly, le magnifique")
-        assertThat(resultat[0]["auteur"]).isEqualTo("Pierre Gasly")
+        assertThat(resultat[0]["titre"]).isEqualTo("La Terre entre nos mains")
+        assertThat(resultat[0]["auteur"]).isEqualTo("Thomas Pesquet")
         assertThat(resultat[0]["reserver"]).isEqualTo(false)
     }
 

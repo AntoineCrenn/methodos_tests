@@ -1,4 +1,4 @@
-package kotlin.livremanagement.infrastructure.application
+package livremanagement.infrastructure.application
 
 import kotlin.livremanagement.domaine.livremanage.GestionLivre
 import kotlin.livremanagement.infrastructure.adaptateur.LivreDAO
