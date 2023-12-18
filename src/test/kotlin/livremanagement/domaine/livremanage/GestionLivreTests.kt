@@ -5,21 +5,25 @@ import assertk.assertFailure
 import assertk.assertions.containsExactly
 import assertk.assertions.isInstanceOf
 import assertk.assertions.hasMessage
-import assertk.assertions.containsExactlyInAnyOrder
 import kotlin.livremanagement.domaine.livre.Livre
 import kotlin.livremanagement.domaine.port.LivrePort
 import io.mockk.every
+import io.mockk.impl.annotations.InjectMockKs
+import io.mockk.impl.annotations.MockK
+import io.mockk.junit5.MockKExtension
 import io.mockk.justRun
-import io.mockk.mockk
 import io.mockk.verify
-import net.jqwik.api.*
-import net.jqwik.api.Combinators.combine
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
 import kotlin.livremanagement.domaine.livremanage.GestionLivre
 
+@ExtendWith(MockKExtension::class)
 class GestionLivreTests {
-    private val gestionlivre = mockk<GestionLivre>()
-    private val port = mockk<LivrePort>()
+    @InjectMockKs
+    private lateinit var gestionlivre: GestionLivre
+
+    @MockK
+    private lateinit var port: LivrePort
 
     @Test
     fun `test creation livre`() {
