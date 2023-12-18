@@ -35,8 +35,8 @@ class GestionLivreTests {
         )
         val resultat = gestionlivre.liste_livre()
         assertThat(resultat).containsExactly(
-            Livre("Gasly, le magnifique", "Pierre Gasly", false),
             Livre("Charles Leclerc, le prodige", "Charles Leclerc", false),
+            Livre("Gasly, le magnifique", "Pierre Gasly", false),
             Livre("La mort en face", "Romain Grosjean", false),
             Livre("Ma vie sans gravité", "Thomas Pesquet", false)
         )
