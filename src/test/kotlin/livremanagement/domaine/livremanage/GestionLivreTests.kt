@@ -62,7 +62,7 @@ class GestionLivreTests {
     @Test
     fun `livre deja reserver`() {
         every { port.LivreparTitre("La mort en face") } answers { Livre("La mort en face", "Romain Grosjean", true) }
-        val livre = Livre("La mort en face", "Romain Grosjean")
+        val livre = Livre("La mort en face", "Romain Grosjean", true)
         println(livre)
         assertFailure{ gestionlivre.reserverLivre(livre.titre) }
             .isInstanceOf(Exception::class.java)
