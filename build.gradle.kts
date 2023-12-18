@@ -168,7 +168,7 @@ tasks.withType<Detekt>().configureEach {
 }
 
 pitest {
-	targetClasses.add("com.jicay.bookmanagement.*")
+	targetClasses.add("livremanagement.*")
 	junit5PluginVersion = "1.0.0"
 	avoidCallsTo.set(setOf("kotlin.jvm.internal"))
 	mutators.set(setOf("STRONGER"))
@@ -176,7 +176,7 @@ pitest {
 	testSourceSets.addAll(sourceSets["test"], sourceSets["testIntegration"])
 	mainSourceSets.addAll(sourceSets["main"])
 	outputFormats.addAll("XML", "HTML")
-	excludedClasses.add("**BookManagementApplication")
+	excludedClasses.add("**LivreManagementApplication")
 }
 
 openApi {
