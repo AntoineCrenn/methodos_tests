@@ -110,7 +110,7 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
-		freeCompilerArgs += "-Xjsr305=strict"
+		freeCompilerArgs += "-Xallow-kotlin-package"
 		jvmTarget = "17"
 	}
 }
