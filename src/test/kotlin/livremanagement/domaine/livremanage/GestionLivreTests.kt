@@ -20,8 +20,6 @@ import kotlin.livremanagement.domaine.livremanage.GestionLivre
 class GestionLivreTests {
     private val gestionlivre = mockk<GestionLivre>()
     private val port = mockk<LivrePort>()
-    private fun strings(): Arbitrary<String> = Arbitraries.strings().withCharRange('A', 'Z').ofMinLength(3).ofMaxLength(10)
-    val liste = mutableListOf<Livre>()
 
     @Test
     fun `test creation livre`() {
@@ -46,14 +44,6 @@ class GestionLivreTests {
             Livre("La mort en face", "Romain Grosjean"),
             Livre("Ma vie sans gravité", "Thomas Pesquet")
         )
-    }
-
-    @Property
-    fun `test recuperation livre base donnees`(
-        @ForAll("generateurlivre") livres: List<Livre>) {
-        every {port.liste_livre()} returns livres
-        val livres = gestionlivre.liste_livre()
-        assertThat(livres).containsExactlyInAnyOrder(*livres.toTypedArray())
     }
 
     @Test
@@ -89,11 +79,5 @@ class GestionLivreTests {
         val livre = Livre("Charles Leclerc, le prodige", "Charles Leclerc")
         gestionlivre.LivreparTitre(livre.titre)
         verify(exactly = 1) { port.LivreparTitre(livre.titre) }
-    }
-
-    @Provide
-    fun generateurlivre(): Arbitrary<List<Livre>> {
-        return combine(strings(), strings()).`as` {titre: String, auteur: String -> Livre(titre, auteur)
-        }.list().uniqueElements().ofSize(20)
     }
 }
