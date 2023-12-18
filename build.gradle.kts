@@ -201,7 +201,6 @@ tasks.register<OpenapiDiffPluginTask>("openApiDiff") {
 
 tasks.test {
 	jvmArgs = listOf("-Xshare:off")
-	jvmArgs "-Xshare:off'";
 }
 
 tasks.register<GradleBuild>("testContract") {
