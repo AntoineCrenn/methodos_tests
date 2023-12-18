@@ -73,6 +73,7 @@ dependencies {
 
 	testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 	testImplementation("io.mockk:mockk:1.13.8")
+	testImplementation("net.jqwik:jqwik:1.8.2")
 	testImplementation("com.willowtreeapps.assertk:assertk:0.27.0")
 	testImplementation("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.15.0")
 
