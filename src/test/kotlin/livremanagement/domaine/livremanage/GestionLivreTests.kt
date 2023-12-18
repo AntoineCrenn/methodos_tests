@@ -60,21 +60,21 @@ class GestionLivreTests {
     }
 
     @Test
-    fun `livre existe pas`() {
-        every { port.LivreparTitre("Ma vie sans gravité") } answers  { throw NoSuchElementException("Le livre avec le titre Ma vie sans gravité n'a pas était trouvé.") }
-        val livre = Livre("Ma vie sans gravité", "Thomas Pesquet")
-        assertFailure{ gestionlivre.reserverLivre(livre.titre) }
-            .isInstanceOf(NoSuchElementException::class.java)
-            .hasMessage("Le livre avec le titre ${livre.titre} n'a pas était trouvé.")
-    }
-
-    @Test
     fun `livre deja reserver`() {
         every { port.LivreparTitre("La mort en face") } answers { Livre("La mort en face", "Romain Grosjean", true) }
         val livre = Livre("La mort en face", "Romain Grosjean")
         assertFailure{ gestionlivre.reserverLivre(livre.titre) }
             .isInstanceOf(Exception::class.java)
             .hasMessage("Le Livre qui a comme titre ${livre.titre} est déjà reservé.")
+    }
+
+    @Test
+    fun `livre existe pas`() {
+        every { port.LivreparTitre("Ma vie sans gravité") } answers  { throw NoSuchElementException("Le livre avec le titre Ma vie sans gravité n'a pas était trouvé.") }
+        val livre = Livre("Ma vie sans gravité", "Thomas Pesquet")
+        assertFailure{ gestionlivre.reserverLivre(livre.titre) }
+            .isInstanceOf(NoSuchElementException::class.java)
+            .hasMessage("Le livre avec le titre ${livre.titre} n'a pas était trouvé.")
     }
 
     @Test
