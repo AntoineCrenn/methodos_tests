@@ -21,7 +21,7 @@ import org.testcontainers.lifecycle.Startables
 @CucumberContextConfiguration
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
-class CucumberTest {
+class CucumberRunnerTest {
     companion object {
         @Container
         var sql = PostgreSQLContainer("postgres:13-alpine")
