@@ -13,8 +13,8 @@ Feature: L'utilisateur peut créer, récupèrer des livres et en réserver.
       | Ma vie sans gravité | Thomas Pesquet | false |
 
   Scenario: L'utilisateur crée deux livres, réserve le premier et récupère ses informations.
-    When L'utilisateur crée le livre "Ferrari" écrit par "Saverio Villa" et est "false".
-    And L'utilisateur crée le livre "Formule 1 2023" écrit par "Marabout" et est "false".
+    When L'utilisateur crée le livre "Ferrari" écrit par "Saverio Villa" et "false".
+    And L'utilisateur crée le livre "Formule 1 2023" écrit par "Marabout" et "false".
     And L'utilisateur réserve le livre intitulé "Ferrari".
     And L'utilisateur récupère le livre intitulé "Ferrari".
-    Then Le statut de la réservation du livre doit alors être "vrai".
+    Then La réservation du livre doit être "true".

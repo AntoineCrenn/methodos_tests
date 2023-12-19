@@ -23,7 +23,7 @@ class LivreEtape {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails()
     }
 
-    @When("Utilisateur crée le livre {string} ecrit par {string} et {string}")
+    @When("L'utilisateur crée le livre {string} écrit par {string} et {string}.")
     fun creer_livre(titre: String, auteur: String, reserver: String) {
         val reserverBoolean = reserver.toBoolean()
         given()
@@ -44,7 +44,7 @@ class LivreEtape {
             .statusCode(201)
     }
 
-    @When("Utilisateur récupère tous les livres")
+    @When("L'utilisateur récupère tous les livres.")
     fun liste_livre() {
         ResultatDernierLivre = given()
             .`when`()
@@ -53,7 +53,7 @@ class LivreEtape {
             .statusCode(200)
     }
 
-    @When("Utilisateur réserve le livre avec le titre {string}")
+    @When("L'utilisateur réserve le livre intitulé {string}.")
     fun reserverLivre(titre: String) {
         given()
             .contentType(ContentType.JSON)
@@ -64,7 +64,7 @@ class LivreEtape {
             .statusCode(200)
     }
 
-    @When("Utiisateur récupère le livre avec le titre {string}")
+    @When("L'utilisateur récupère le livre intitulé {string}.")
     fun LivreparTitre(titre: String) {
         ResultatLivre = given()
             .`when`()
@@ -73,7 +73,7 @@ class LivreEtape {
             .statusCode(200)
     }
 
-    @Then("La liste doit contenir des livres dans l'ordre alphabétique.")
+    @Then("La liste doit contenir les livres suivants dans le même ordre.")
     fun Liste_Livre(liste: List<Map<String, Any>>) {
         val reponse = liste.joinToString(separator = ",", prefix = "[", postfix = "]") { ligne ->
             """
@@ -92,7 +92,7 @@ class LivreEtape {
             .isEqualTo(JsonPath(reponse).prettify())
     }
 
-    @Then("La réservation du livre doit être {string}")
+    @Then("La réservation du livre doit être {string}.")
     fun `Status Reservation Livre`(status: String) {
         val reponse = status.toBoolean()
         assertThat(ResultatLivre.extract().body().jsonPath().getBoolean("reserver")).isEqualTo(reponse)
