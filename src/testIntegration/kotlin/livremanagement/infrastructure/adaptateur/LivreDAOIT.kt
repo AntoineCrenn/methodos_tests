@@ -86,7 +86,7 @@ class LivreDAOIT {
         livreDAO.reserverLivre("La mort en face")
         val resultat = performQuery(
             // language=sql
-            "SELECT * from livre WHERE titre='La mort en face'"
+            "SELECT * from Livre WHERE titre='La mort en face'"
         )
         assertThat(resultat.size).isEqualTo(1)
         assertThat(resultat[0]["reserver"]).isEqualTo(true)
