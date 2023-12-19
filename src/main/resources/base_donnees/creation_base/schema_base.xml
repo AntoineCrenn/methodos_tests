@@ -9,10 +9,10 @@
     <changeSet id="20231009000500" author="acrenn">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="Livre" />
+                <tableExists tableName="livre" />
             </not>
         </preConditions>
-        <createTable tableName="Livre">
+        <createTable tableName="livre">
             <column name="id" type="int">
                 <constraints nullable="false" />
             </column>
@@ -24,7 +24,7 @@
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="id" tableName="Livre" />
-        <addAutoIncrement tableName="Livre" columnName="id" />
+        <addPrimaryKey columnNames="id" tableName="livre" />
+        <addAutoIncrement tableName="livre" columnName="id" />
     </changeSet>
 </databaseChangeLog>

@@ -9,10 +9,10 @@
     <changeSet id="20231009000700" author="acrenn">
         <preConditions onFail="MARK_RAN">
             <not>
-                <columnExists tableName="Livre" columnName="reserver"/>
+                <columnExists tableName="livre" columnName="reserver"/>
             </not>
         </preConditions>
-        <addColumn tableName="Livre">
+        <addColumn tableName="livre">
             <column name="reserver" defaultValueBoolean="false" type="boolean">
                 <constraints nullable="false" />
             </column>
