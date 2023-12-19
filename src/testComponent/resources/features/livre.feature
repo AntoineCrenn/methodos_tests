@@ -6,7 +6,7 @@ Feature: L'utilisateur peut créer, récupèrer des livres et en réserver.
     And L'utilisateur crée le livre "Ma vie sans gravité" écrit par "Thomas Pesquet" et "false".
     And L'utilisateur récupère tous les livres.
     Then La liste doit contenir les livres suivants dans le même ordre.
-      | name | author | reserved |
+      | titre | auteur | reserver |
       | Charles Leclerc, le prodige | Charles Leclerc | false |
       | Gasly, le magnifique | Pierre Gasly | false |
       | La mort en face | Romain Grosjean | false |
