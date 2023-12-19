@@ -76,8 +76,8 @@ class LivreControlleurIT {
             // language=json
             content = """
                 {
-                  "titre": "test",
-                  "auteur": "test"
+                  "nom": "Gasly, le magnifique",
+                  "auteur": "Pierre Gasly"
                 }
             """.trimIndent()
             contentType = APPLICATION_JSON
