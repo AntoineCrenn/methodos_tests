@@ -25,8 +25,6 @@
         </createTable>
 
         <addPrimaryKey columnNames="id" tableName="Livre" />
-
         <addAutoIncrement tableName="Livre" columnName="id" />
     </changeSet>
-
 </databaseChangeLog>

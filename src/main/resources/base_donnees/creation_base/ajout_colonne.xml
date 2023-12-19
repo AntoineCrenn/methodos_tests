@@ -6,13 +6,13 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="202312080000" author="acrenn">
+    <changeSet id="20231009000700" author="acrenn">
         <preConditions onFail="MARK_RAN">
             <not>
-                <columnExists tableName="livre" columnName="reserver"/>
+                <columnExists tableName="Livre" columnName="reserver"/>
             </not>
         </preConditions>
-        <addColumn tableName="livre">
+        <addColumn tableName="Livre">
             <column name="reserver" defaultValueBoolean="false" type="boolean">
                 <constraints nullable="false" />
             </column>
