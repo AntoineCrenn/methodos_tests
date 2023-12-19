@@ -1,4 +1,4 @@
-package lin.livremanagement.infrastructure.pilote
+package livremanagement.infrastructure.pilote
 
 import livremanagement.domaine.livremanage.GestionLivre
 import org.springframework.http.HttpStatus

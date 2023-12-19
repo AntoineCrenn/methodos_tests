@@ -15,7 +15,6 @@ import io.mockk.justRun
 import io.mockk.verify
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import livremanagement.domaine.livremanage.GestionLivre
 
 @ExtendWith(MockKExtension::class)
 class GestionLivreTests {
