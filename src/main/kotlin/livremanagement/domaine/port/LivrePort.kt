@@ -1,6 +1,6 @@
-package kotlin.livremanagement.domaine.port
+package livremanagement.domaine.port
 
-import kotlin.livremanagement.domaine.livre.Livre
+import livremanagement.domaine.livre.Livre
 
 interface LivrePort {
     fun creer_livre(livre: Livre)

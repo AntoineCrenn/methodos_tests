@@ -1,7 +1,7 @@
 package livremanagement.infrastructure.application
 
-import kotlin.livremanagement.domaine.livremanage.GestionLivre
-import kotlin.livremanagement.infrastructure.adaptateur.LivreDAO
+import livremanagement.domaine.livremanage.GestionLivre
+import livremanagement.infrastructure.adaptateur.LivreDAO
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

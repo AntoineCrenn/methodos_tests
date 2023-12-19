@@ -1,7 +1,7 @@
-package kotlin.livremanagement.domaine.livremanage
+package livremanagement.domaine.livremanage
 
-import kotlin.livremanagement.domaine.livre.Livre
-import kotlin.livremanagement.domaine.port.LivrePort
+import livremanagement.domaine.livre.Livre
+import livremanagement.domaine.port.LivrePort
 
 class GestionLivre (
     private val livreport: LivrePort

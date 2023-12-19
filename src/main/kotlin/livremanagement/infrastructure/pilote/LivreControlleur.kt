@@ -1,10 +1,10 @@
-package kotlin.livremanagement.infrastructure.pilote
+package lin.livremanagement.infrastructure.pilote
 
-import kotlin.livremanagement.domaine.livremanage.GestionLivre
+import livremanagement.domaine.livremanage.GestionLivre
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
-import kotlin.livremanagement.infrastructure.pilote.dto.toDto
-import kotlin.livremanagement.infrastructure.pilote.dto.LivreDTO
+import livremanagement.infrastructure.pilote.dto.toDto
+import livremanagement.infrastructure.pilote.dto.LivreDTO
 
 @RestController
 @RequestMapping("/livres")

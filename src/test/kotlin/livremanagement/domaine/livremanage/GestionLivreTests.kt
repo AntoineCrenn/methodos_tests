@@ -5,8 +5,8 @@ import assertk.assertFailure
 import assertk.assertions.containsExactly
 import assertk.assertions.isInstanceOf
 import assertk.assertions.hasMessage
-import kotlin.livremanagement.domaine.livre.Livre
-import kotlin.livremanagement.domaine.port.LivrePort
+import livremanagement.domaine.livre.Livre
+import livremanagement.domaine.port.LivrePort
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
@@ -15,7 +15,7 @@ import io.mockk.justRun
 import io.mockk.verify
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import kotlin.livremanagement.domaine.livremanage.GestionLivre
+import livremanagement.domaine.livremanage.GestionLivre
 
 @ExtendWith(MockKExtension::class)
 class GestionLivreTests {
@@ -79,7 +79,7 @@ class GestionLivreTests {
 
     @Test
     fun `Livre par Titre`() {
-        every { port.LivreparTitre(any()) } answers {Livre("Charles Leclerc, le prodige", "Charles Leclerc")}
+        every { port.LivreparTitre(any()) } answers { Livre("Charles Leclerc, le prodige", "Charles Leclerc") }
         val livre = Livre("Charles Leclerc, le prodige", "Charles Leclerc")
         gestionlivre.LivreparTitre(livre.titre)
         verify(exactly = 1) { port.LivreparTitre(livre.titre) }

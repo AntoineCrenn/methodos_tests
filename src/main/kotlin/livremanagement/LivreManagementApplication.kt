@@ -1,4 +1,4 @@
-package kotlin.livremanagement
+package livremanagement
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

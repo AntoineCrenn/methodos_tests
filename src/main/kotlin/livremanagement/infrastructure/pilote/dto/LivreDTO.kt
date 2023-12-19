@@ -1,6 +1,6 @@
-package kotlin.livremanagement.infrastructure.pilote.dto
+package livremanagement.infrastructure.pilote.dto
 
-import kotlin.livremanagement.domaine.livre.Livre
+import livremanagement.domaine.livre.Livre
 
 data class LivreDTO(val titre: String, val auteur: String, val reserver: Boolean) {
     fun domaine(): Livre {

@@ -1,7 +1,7 @@
-package kotlin.livremanagement.infrastructure.adaptateur
+package livremanagement.infrastructure.adaptateur
 
-import kotlin.livremanagement.domaine.livre.Livre
-import kotlin.livremanagement.domaine.port.LivrePort
+import livremanagement.domaine.livre.Livre
+import livremanagement.domaine.port.LivrePort
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.stereotype.Service

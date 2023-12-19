@@ -1,7 +1,7 @@
 package livremanagement.infrastructure.pilote
 
-import kotlin.livremanagement.domaine.livre.Livre
-import kotlin.livremanagement.domaine.livremanage.GestionLivre
+import livremanagement.domaine.livre.Livre
+import livremanagement.domaine.livremanage.GestionLivre
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
 import io.mockk.justRun

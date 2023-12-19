@@ -7,7 +7,7 @@ import assertk.assertions.isNotNull
 import assertk.assertions.isTrue
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
-import kotlin.livremanagement.domaine.livre.Livre
+import livremanagement.domaine.livre.Livre
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
@@ -21,7 +21,6 @@ import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
 import java.sql.ResultSet
-import kotlin.livremanagement.infrastructure.adaptateur.LivreDAO
 
 @SpringBootTest
 @Testcontainers
