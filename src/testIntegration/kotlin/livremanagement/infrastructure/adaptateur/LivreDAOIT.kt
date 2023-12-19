@@ -34,7 +34,7 @@ class LivreDAOIT {
     fun beforeEach() {
         performQuery(
             // language=sql
-            "DELETE FROM livre"
+            "DELETE FROM Livre"
         )
     }
 
@@ -43,7 +43,7 @@ class LivreDAOIT {
         performQuery(
             // language=sql
             """
-               insert into livre (titre, auteur)
+               insert into Livre (titre, auteur)
                values 
                     ('Gasly, le magnifique', 'Pierre Gasly'),
                     ('Charles Leclerc, le prodige', 'Charles Leclerc'),
@@ -64,7 +64,7 @@ class LivreDAOIT {
         livreDAO.creer_livre(Livre("La Terre entre nos mains", "Thomas Pesquet"))
         val resultat = performQuery(
             // language=sql
-            "SELECT * from livre"
+            "SELECT * from Livre"
         )
         assertThat(resultat.size).isEqualTo(1)
         assertThat(resultat[0]["id"]).isNotNull()
@@ -79,7 +79,7 @@ class LivreDAOIT {
         performQuery(
             // language=sql
             """
-               insert into livre (titre, auteur)
+               insert into Livre (titre, auteur)
                values 
                    ('La mort en face', 'Romain Grosjean');
             """.trimIndent())
@@ -99,7 +99,7 @@ class LivreDAOIT {
         performQuery(
             // language=sql
             """
-               insert into livre (titre, auteur)
+               insert into Livre (titre, auteur)
                values 
                    ('La mort en face', 'Romain Grosjean');
             """.trimIndent())
