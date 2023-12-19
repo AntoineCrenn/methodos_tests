@@ -76,7 +76,7 @@ class LivreControlleurIT {
             // language=json
             content = """
                 {
-                  "titre": "Gasly le magnifique",
+                  "titre": "Gasly, le magnifique",
                   "auteur": "Pierre Gasly"
                 }
             """.trimIndent()

@@ -21,7 +21,7 @@ class LivreDAO(private val parametres: NamedParameterJdbcTemplate): LivrePort {
 
     override fun creer_livre(livre: Livre) {
         parametres
-            .update("INSERT INTO LIVRE (titre, auteur) values (:titre, :auteur)", mapOf(
+            .update("INSERT INTO LIVRE (titre, auteur, reserver) values (:titre, :auteur, :reserver)", mapOf(
                 "titre" to livre.titre,
                 "auteur" to livre.auteur,
                 "reserver" to livre.reserver
